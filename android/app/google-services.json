@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "876632381056",
+    "project_id": "namma-ooru-nearu-373605",
+    "storage_bucket": "namma-ooru-nearu-373605.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876632381056:android:92c0db186eb3adbf94b865",
+        "android_client_info": {
+          "package_name": "com.example.nammaooru_nearu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "876632381056-5lnq7kg28r6qs8e6es4vksr0leh98ge1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNB0sZGAxZYWS3yBRlq6KFqhnXugk2KAY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "876632381056-5lnq7kg28r6qs8e6es4vksr0leh98ge1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "876632381056-m0j18nfl8doel72ankkapde139f9a9ei.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.nammaooruNearu"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

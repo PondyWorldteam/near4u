@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
-import 'package:nammaooru_nearu/screens/home/recommended_view.dart';
+import 'package:nammaooru_nearu/screens/home/widgets/home_row_view.dart';
+import 'package:nammaooru_nearu/screens/home/widgets/recommended_view.dart';
 import 'package:nammaooru_nearu/utils/constants.dart';
 import 'package:nammaooru_nearu/utils/custom_snackbar.dart';
 
 import '../../presentation/bloc/internet_bloc.dart';
 import '../../presentation/bloc/location_bloc.dart';
-import 'home_row_view.dart';
+
 import 'widgets/carousel_slider_view.dart';
 import 'widgets/category_view.dart';
 import 'widgets/chip_row.dart';

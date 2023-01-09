@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:nammaooru_nearu/screens/home/widgets/home_row_view.dart';
 import 'package:nammaooru_nearu/screens/product_view/product_about/widgets/product_review_comment_view.dart';
 import '../../../utils/constants.dart';
-import '../../home/home_row_view.dart';
+
 import 'widgets/product_address_view.dart';
 import 'widgets/product_availability_view.dart';
 import 'widgets/product_contact_view.dart';
