@@ -48,27 +48,27 @@ jobs:
           flutter-version: '3.3.8'
       - run: flutter pub get
       - run: flutter clean
-      - run: flutter build ios --release --no-codesign
-      - run: cd /Users/runner/work/cicd/cicd/build/ios/iphoneos
-      - run: ls
-      - run: mkdir -p /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
-      - run: mv /Users/runner/work/cicd/cicd/build/ios/iphoneos/Runner.app /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
-      - run: zip -r /Users/runner/work/cicd/cicd/build/ios/iphoneos/Runner.ipa /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
-      - run: rm -rf /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
-      # - run: |
-      #     cd ios
-      #     rm podfile.lock
-      #     pod deintegrate
-      #     pod repo update
-      #     pod install
-      # - run: |
-      #     flutter build ios --no-codesign
-      #     cd build/ios/iphoneos
-      #     mkdir Payload
-      #     cd Payload
-      #     ln -s ../Runner.app
-      #     cd ..
-      #     zip -r app.ipa Payload
+      # - run: flutter build ios --release --no-codesign
+      # - run: cd /Users/runner/work/cicd/cicd/build/ios/iphoneos
+      # - run: ls
+      # - run: mkdir -p /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
+      # - run: mv /Users/runner/work/cicd/cicd/build/ios/iphoneos/Runner.app /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
+      # - run: zip -r /Users/runner/work/cicd/cicd/build/ios/iphoneos/Runner.ipa /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
+      # - run: rm -rf /Users/runner/work/cicd/cicd/build/ios/iphoneos/Payload
+      - run: |
+          cd ios
+          rm podfile.lock
+          pod deintegrate
+          pod repo update
+          pod install
+      - run: |
+          flutter build ios --no-codesign
+          cd build/ios/iphoneos
+          mkdir Payload
+          cd Payload
+          ln -s ../Runner.app
+          cd ..
+          zip -r app.ipa Payload
       - name: Push to Release iOS
         uses: ncipollo/release-action@v1
         with:
@@ -94,7 +94,7 @@ jobs:
         with:
          appId: ${{ secrets.FIREBASE_IOS_ID }}
          token: ${{ secrets.FIREBASE_TOKEN}}      
-         file: build/ios/iphoneos/Runner.ipa             
+         file: build/ios/iphoneos/app.ipa             
 
       # - name: Push to Release
       #   uses: ncipollo/release-action@v1
