@@ -90,7 +90,7 @@ jobs:
         with:
          appId: ${{ secrets.FIREBASE_IOS_ID }}
          token: ${{ secrets.FIREBASE_TOKEN}}      
-         file: build/ios/iphoneos/app.ipa             
+         file: /Users/risk/Downloads/flutter projects/nammaooru_nearu/build/ios/iphoneos/app.ipa            
 
       # - name: Push to Release
       #   uses: ncipollo/release-action@v1
