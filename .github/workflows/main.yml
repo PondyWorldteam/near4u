@@ -75,22 +75,22 @@ jobs:
           artifacts: "build/ios/iphoneos/Runner.ipa"
           tag: v1.0.${{ github.run_number}}    
           token: ${{ secrets.APP_TOKEN}} 
-  beta_ios:
-    name: upload iOS beta to Firebase App Distribution
-    needs: [ build_ios ] 
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: setup java
-        uses: actions/setup-java@v1
-        with:
-          java-version: '12.x'
-      - name: Upload IPA
-        uses: wzieba/Firebase-Distribution-Github-Action@v1
-        with:
-         appId: ${{ secrets.FIREBASE_IOS_ID }}
-         token: ${{ secrets.FIREBASE_TOKEN}}      
-         file: build/ios/iphoneos/app.ipa             
+  # beta_ios:
+  #   name: upload iOS beta to Firebase App Distribution
+  #   needs: [ build_ios ] 
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v1
+  #     - name: setup java
+  #       uses: actions/setup-java@v1
+  #       with:
+  #         java-version: '12.x'
+  #     - name: Upload IPA
+  #       uses: wzieba/Firebase-Distribution-Github-Action@v1
+  #       with:
+  #        appId: ${{ secrets.FIREBASE_IOS_ID }}
+  #        token: ${{ secrets.FIREBASE_TOKEN}}      
+  #        file: build/ios/iphoneos/app.ipa             
 
       # - name: Push to Release
       #   uses: ncipollo/release-action@v1
