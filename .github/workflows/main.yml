@@ -69,12 +69,21 @@ jobs:
           ln -s ../Runner.app
           cd ..
           zip -r app.ipa Payload 
-      - name: Push to Release iOS
-        uses: ncipollo/release-action@v1
+      # - name: Push to Release iOS
+      #   uses: ncipollo/release-action@v1
+      #   with:
+      #     artifacts: "build/ios/iphoneos/app.ipa"
+      #     tag: v1.0.${{ github.run_number}}    
+      #     token: ${{ secrets.APP_TOKEN}}
+       - name: Push to Release iOS
+        uses: actions/upload-artifact@main
         with:
-          artifacts: "build/ios/iphoneos/app.ipa"
-          tag: v1.0.${{ github.run_number}}    
-          token: ${{ secrets.APP_TOKEN}}
+          name: ios-build
+          path: build/ios/iphoneos
+
+          # artifacts: "build/ios/iphoneos/app.ipa"
+          # tag: v1.0.${{ github.run_number}}    
+          # token: ${{ secrets.APP_TOKEN}}   
   beta_ios:
     name: upload iOS beta to Firebase App Distribution
     needs: [ build_ios ] 
@@ -85,12 +94,16 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '12.x'
+      - name: Download artifacts
+        uses: actions/download-artifact@main
+        with:
+          name: ios-build    
       - name: Upload IPA
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
          appId: ${{ secrets.FIREBASE_IOS_ID }}
          token: ${{ secrets.FIREBASE_TOKEN}}      
-         file: /Users/risk/Downloads/flutter projects/nammaooru_nearu/build/ios/iphoneos/app.ipa            
+         file: ios-build/app.ipa            
 
       # - name: Push to Release
       #   uses: ncipollo/release-action@v1
