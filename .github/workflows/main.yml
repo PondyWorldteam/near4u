@@ -75,11 +75,11 @@ jobs:
       #     artifacts: "build/ios/iphoneos/app.ipa"
       #     tag: v1.0.${{ github.run_number}}    
       #     token: ${{ secrets.APP_TOKEN}}
-       - name: Push to Release iOS
-         uses: actions/upload-artifact@main
-         with:
-           name: ios-build
-           path: build/ios/iphoneos
+      - name: Push to Release iOS
+        uses: actions/upload-artifact@main
+        with:
+          name: ios-build
+          path: build/ios/iphoneos
 
           # artifacts: "build/ios/iphoneos/app.ipa"
           # tag: v1.0.${{ github.run_number}}    
