@@ -74,7 +74,7 @@ jobs:
         with:
           artifacts: "build/ios/iphoneos/Runner.ipa"
           tag: v1.0.${{ github.run_number}}    
-          token: {{ secrets.APP_TOKEN }}
+          token: ${{ secrets.APP_TOKEN}} 
   beta_ios:
     name: upload iOS beta to Firebase App Distribution
     needs: [ build_ios ] 
