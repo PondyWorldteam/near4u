@@ -85,10 +85,6 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: '12.x'
-      - name: Download Artifact
-        uses: actions/download-artifact@main
-        with:
-          name: ios-build
       - name: Upload IPA
         uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
