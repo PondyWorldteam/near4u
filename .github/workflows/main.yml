@@ -90,7 +90,7 @@ jobs:
         with:
           name: ios-build
       - name: Upload IPA
-        uses: wzeiba/Firebase-Distribution-Github-Action@v1.0.0
+        uses: wzieba/Firebase-Distribution-Github-Action@v1
         with:
          appId: ${{ secrets.FIREBASE_IOS_ID }}
          token: ${{ secrets.FIREBASE_TOKEN}}      
