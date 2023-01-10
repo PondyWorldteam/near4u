@@ -70,7 +70,7 @@ jobs:
       #     cd ..
       #     zip -r app.ipa Payload
       - name: Push to Release iOS
-        uses: action/upload-artifact@master
+        uses: action/upload-artifact@main
         with:
           name: ios-build
           path: build/ios/iphoneos
@@ -85,7 +85,7 @@ jobs:
         with:
           java-version: '12.x'
       - name: Download Artifact
-        uses: actions/download-artifact@master
+        uses: actions/download-artifact@main
         with:
           name: ios-build
       - name: Upload IPA
