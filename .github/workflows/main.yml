@@ -70,10 +70,11 @@ jobs:
       #     cd ..
       #     zip -r app.ipa Payload
       - name: Push to Release iOS
-        uses: action/upload-artifact@main
+        uses: ncipollo/release-action@v1
         with:
-          name: ios-build
-          path: build/ios/iphoneos
+          artifacts: "build/ios/iphoneos/Runner.ipa"
+          tag: v1.0.${{ github.run_number}}    
+          token: {{ secrets.APP_TOKEN }}
   beta_ios:
     name: upload iOS beta to Firebase App Distribution
     needs: [ build_ios ] 
@@ -93,7 +94,7 @@ jobs:
         with:
          appId: ${{ secrets.FIREBASE_IOS_ID }}
          token: ${{ secrets.FIREBASE_TOKEN}}      
-         file: ios-build/Runner.ipa             
+         file: build/ios/iphoneos/Runner.ipa             
 
       # - name: Push to Release
       #   uses: ncipollo/release-action@v1
